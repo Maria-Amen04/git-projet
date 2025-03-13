@@ -9,24 +9,30 @@
     <nav class="navbar">
         <div class="logo"><strong>Lostbag</strong></div>
         <div>
-            <a href="#">Product</a>
-            <select>
-                <option value="">Product</option>
-                <option value="product1">Product 1</option>
-                <option value="product2">Product 2</option>
-            </select>
-            <a href="#">Ressource</a>
-            <select>
-                <option value="">Ressource</option>
-                <option value="ressource1">Ressource 1</option>
-                <option value="ressource2">Ressource 2</option>
-            </select>
-            <a href="#">Campany</a>
-            <select>
-                <option value="">Campany</option>
-                <option value="campany1">Campany 1</option>
-                <option value="campany2">Campany 2</option>
-            </select>
+            <div>
+               <a href="#">Product</a>
+               <select onchange="location = this.value;">
+                   <option value="#">Select one option</option>
+                   <option value="#">Product 1</option>
+                   <option value="#">Product 2</option>
+               </select>
+            </div>
+            <div>
+                <a href="#">Ressource</a>
+                <select onchange="location = this.value;">
+                   <option value="#">Select one option</option>
+                   <option value="#">Ressource 1</option>
+                   <option value="#">Ressource 2</option>
+                </select>
+            </div>
+            <div>
+                <a href="#">Campany</a>
+                <select onchange="location = this.value;">
+                   <option value="#">Select one option</option>
+                   <option value="#">Campany 1</option>
+                   <option value="#">Campany 2</option>
+                </select>
+            </div>
             <a href="#">Pricing</a>
             <a href="#">Enterprise</a>
         </div>

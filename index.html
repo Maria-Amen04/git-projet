@@ -4,99 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>pricing-page</title>
+    <title>Pricing Page</title>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="image/LostBag.png" alt="Logo">
-        <div>
-             <select onchange="location = this.value;">
-                <option selected disabled>Product</option>
-                <option value="#">Product 1</option>
-                <option value="#">Product 2</option>
-            </select>
-            <select onchange="location = this.value;">
-                <option selected disabled>Ressource</option>
-                <option value="#">Ressource 1</option>
-                <option value="#">Ressource 2</option>
-            </select>
-            <select onchange="location = this.value;">
-                <option selected disabled>Campany</option>
-                <option value="#">Campany 1</option>
-                <option value="#">Campany 2</option>
-            </select>
-            <a href="#">Pricing</a>
-            <a href="#">Enterprise</a>
-        </div>
-        <div>
-            <a href="#">Login</a>
-            <a href="#">Sign up</a>
-        </div>
-    </nav>
+    <div class="container">
+        <nav class="navbar">
+            <div>
+                <div class="logo"><strong>Lostbag</strong></div>
+                <select onchange="location = this.value;">
+                    <option selected disabled>Product</option>
+                    <option value="#">Product 1</option>
+                    <option value="#">Product 2</option>
+                </select>
+                <select onchange="location = this.value;">
+                    <option selected disabled>Ressource</option>
+                    <option value="#">Ressource 1</option>
+                    <option value="#">Ressource 2</option>
+                </select>
+                <select onchange="location = this.value;">
+                    <option selected disabled>Company</option>
+                    <option value="#">Company 1</option>
+                    <option value="#">Company 2</option>
+                </select>
+                <a href="#">Pricing</a>
+                <a href="#">Enterprise</a>
+            </div>
+            <div>
+                <a href="#">Login</a>
+                <a href="#">Sign up</a>
+            </div>
+        </nav>
+    </div>
 
     <div class="pricing-container">
-        <h1>Flexible pricing plans for every need</h1>
+        <h2>Flexible pricing plans for every need</h2>
         <p>Find the perfect plan whether you’re starting out or scaling up with advanced tools and premium support.</p>
-        <div>
-            <button>Billed monthly</button>
-            <button>Billed annually</button>
+        <div class="billing-options">
+            <button class="billing-button">Billed monthly</button>
+            <button class="billing-button">Billed annually</button>
+            <button class="save-kit-button">Save 10%</button>
         </div>
+
         <div class="plans">
-            <div class="plan-free">
-                <h2>Free</h2>
-                <p>Start with the basic expérience LostBag at no cost.</p>
-                <h3>$0 / month</h3>
+            <div class="plan">
+                <h3>Free</h3>
+                <p>Start with the basics and experience LoafBlog at no cost.</p>
+                <h5>$0 / month</h5>
                 <p>Pause and cancel anytime</p>
-                <button>Select Plan</button>
-                <p>Free plan includes;</p>
+                <button class="select-plan-button">Select Plan</button>
+                <p>Free plan includes:</p>
                 <ul>
-                    <li>Essential event management tools</li>
-                    <li>Basic analytics & reporting</li>
-                    <li>Up to 3 events per month</li>
-                    <li>Community support</li>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Essential event management tools</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2">Basic analytics & reporting</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Up to 3 events per month</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Community support</label>
+                    </li>
                 </ul>
             </div>
-            
-            <div class="plan-seedling">
-                <h2>Seedling</h2>
+
+            <div class="plan">
+                <h3>Seeding</h3>
                 <p>Unlock advanced tools and premium support for seamless event management.</p>
-                <h3>$229 / month</h3>
+                <h5>$299 / month</h5>
                 <p>Pause and cancel anytime</p>
-                <button>Select Plan</button>
-                <p>Seedling plan includes;</p>
+                <button class="select-plan-button">Select Plan</button>
+                <p>Seeding plan includes:</p>
                 <ul>
-                    <li>Unlimited events</li>
-                    <li>AI-powered insights & recommendations</li>
-                    <li>Advanced budget tracking</li>
-                    <li>Priority support</li>
-                    <li>Team collaboration tools</li>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Unlimited events</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2"> AI-powered insights & recommendations</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Advanced budget tracking</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Priority support</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Team collaboration tools</label>
+                    </li>
                 </ul>
             </div>
 
-            <div class="plan-enterprise">
-                <h2>Enterprise</h2>
-                <p>For teams that need custom solution and dedicated support. Contact us for more info.</p>
-                <h3>$500 / month</h3>
+            <div class="plan">
+                <h3>Enterprise</h3>
+                <p>For teams that need custom solutions and dedicated support. Contact us for more info.</p>
+                <h5>$500 / month</h5>
                 <p>Pause and cancel anytime</p>
-                <button>Contact us -></button>
-                <p>Entreprise plan includes;</p>
+                <button class="contact-us-button">Contact Us →</button>
+                <p>Enterprise plan includes:</p>
                 <ul>
-                    <li>Custom integrations</li>
-                    <li>Dedicated account manager</li>
-                    <li>Advanced security & compliance</li>
-                    <li>API access for automation</li>
-                    <li>VIP onboarding & training</li>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Custom integrations</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2"> Dedicated account manager</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Advanced security & compliance</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4"> API access for automation</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4"> VIP onboarding & training</label>
+                    </li>
                 </ul>
             </div>
         </div>
-
-        <div class="integration"></div>
-           <h2>Integration</h2>
-           <p>Seamless integrations for a smarter workflow</p>
-        </div>
-
     </div>
-    
 </body>
 </html>

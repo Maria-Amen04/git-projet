@@ -7,10 +7,9 @@
     <title>Pricing Page</title>
 </head>
 <body>
-    <div class="container">
         <nav class="navbar">
-            <div>
-                <div class="logo"><strong>Lostbag</strong></div>
+            <div class="logo"><strong>Lostbag</strong></div>
+            <div class="navbar-center">
                 <select onchange="location = this.value;">
                     <option selected disabled>Product</option>
                     <option value="#">Product 1</option>
@@ -27,27 +26,37 @@
                     <option value="#">Company 2</option>
                 </select>
                 <a href="#">Pricing</a>
-                <a href="#">Enterprise</a>
+                <a href="#" class="no-border">Enterprise</a>
             </div>
-            <div>
+            <div class="navbar-right">
                 <a href="#">Login</a>
                 <a href="#">Sign up</a>
             </div>
         </nav>
-    </div>
+    <!-- </div> -->
 
     <div class="pricing-container">
-        <h2>Flexible pricing plans for every need</h2>
-        <p>Find the perfect plan whether you’re starting out or scaling up with advanced tools and premium support.</p>
+        <div class="pricing-radio">
+            <input type="radio" id="pricing-radio" name="pricing" checked>
+            <label for="pricing-radio">Pricing</label>
+        </div>
+        <h2>Flexible pricing plans<br> for every need</h2>
+        <p>Find the perfect plan-whether you’re starting out or<br> scaling up with advanced tools and premium support.</p>
         <div class="billing-options">
-            <button class="billing-button">Billed monthly</button>
-            <button class="billing-button">Billed annually</button>
+            <p>Billed monthly</p>
+            <label class="switch">
+                <input type="checkbox" id="billing-toggle" disabled>
+                <span class="slider round"></span>
+            </label>
+            <p>Billed annually</p>
             <button class="save-kit-button">Save 10%</button>
         </div>
+        
 
         <div class="plans">
             <div class="plan">
                 <h3>Free</h3>
+                <button class="save-button">Started plan</button>
                 <p>Start with the basics and experience LoafBlog at no cost.</p>
                 <h5>$0 / month</h5>
                 <p>Pause and cancel anytime</p>
@@ -75,6 +84,7 @@
 
             <div class="plan">
                 <h3>Seeding</h3>
+                <button class="save-button">Popular plan</button>
                 <p>Unlock advanced tools and premium support for seamless event management.</p>
                 <h5>$299 / month</h5>
                 <p>Pause and cancel anytime</p>
@@ -106,6 +116,7 @@
 
             <div class="plan">
                 <h3>Enterprise</h3>
+                <button class="save-button">Campany plan</button>
                 <p>For teams that need custom solutions and dedicated support. Contact us for more info.</p>
                 <h5>$500 / month</h5>
                 <p>Pause and cancel anytime</p>

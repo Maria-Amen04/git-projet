@@ -1,50 +1,63 @@
-body {
+html, body {
+    height: 100%; /* Prendre toute la hauteur de la page */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer les paddings par défaut */
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, white, #f6d8c0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    background: linear-gradient(to bottom, white, #ebc5a9); /* Dégradé appliqué au body */
+} 
+
+body {
+    display: block; /* Retirer flex pour éviter les comportements inattendus*/ 
     margin: 0;
-}
+    padding: 0;
+} 
 
 .navbar {
-    width: 80%; /* Largeur réduite */
-    background: white; /* Fond blanc */
-    padding: 5px 15px; /* Padding réduit (hauteur réduite) */
+    width: 70%;
+    background: white;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* Espacement entre les éléments */
+    justify-content: space-between; /* Espace entre les groupes */
     align-items: center;
-    border: 1px solid #ddd; /* Bordure ajoutée */
+    border: 1px solid #ddd;
     position: absolute;
     top: 0; 
-    margin-bottom: 2px;
-    left: 50%; /* Centrage horizontal */
-    transform: translateX(-50%); /* Centrage horizontal */
-    border-radius: 10px; /* Coins arrondis */
-    z-index: 1000; /* Assure que la navbar est au-dessus du contenu */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    z-index: 1000;
+    margin-top: 15px;
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacement entre les éléments */
 }
 
 .navbar .logo {
-    font-size: 16px; /* Taille de police réduite */
-    font-weight: bold; /* Texte en gras */
-    margin-right: auto; /* Logo poussé à gauche */
-}
-
-.navbar .nav-links {
-    display: flex;
-    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: auto;
 }
 
 .navbar select, .navbar a {
-    background-color: transparent; /* Fond transparent */
+    background-color: transparent;
     color: #444;
     border: none;
-    padding: 5px 10px; /* Padding réduit */
-    margin: 0 5px; /* Marge réduite */
+    padding: 5px 10px;
+    margin: 0 5px;
     cursor: pointer;
-    font-size: 12px; /* Taille de police réduite */
+    font-size: 12px;
 }
 
 .navbar select:hover, .navbar a:hover {
@@ -53,156 +66,329 @@ body {
     border-radius: 5px;
 }
 
-.navbar a[href="#"]:last-child { /* Style spécifique pour "Sign up" */
-    border: 1px solid #e98c35; /* Bordure ajoutée */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 5px 15px; /* Padding ajusté */
+.navbar a[href="#"]:last-child {
+    border: 1px solid #e98c35;
+    border-radius: 10px;
+    padding: 5px 15px;
 }
+
+.navbar a.no-border {
+    border: none !important;
+    padding: 5px 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
 
 .pricing-container {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
+    /* max-width: 1200px; */
     text-align: center;
-    margin-top: 200px; /* Ajustement pour la navbar (hauteur de la navbar + espace) */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding-top: 100px; /* Espacement pour la navbar */
+    background: linear-gradient(to bottom, white, #ebc5a9); /* Dégradé appliqué */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrage horizontal */
+    align-items: center;
+}
+
+.pricing-radio {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 3px;
+    padding: 2px 3px;
+    border: 0.5px solid #e98c35;
+    border-radius: 20px;
+    background-color: white; /* Fond blanc pour contraster avec le dégradé */
+}
+
+.pricing-radio input[type="radio"] {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 4px solid #e98c35;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.pricing-radio input[type="radio"]:checked {
+    background-color: #e98c35; /* Fond orange */
+}
+
+.pricing-radio input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.pricing-radio label {
+    font-size: 8px;
+    color: #666;
+    cursor: pointer;
 }
 
 .pricing-container h2 {
-    margin-top: 20px; /* Espacement depuis le haut */
-    font-size: 25px; /* Taille de police */
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .pricing-container p {
-    margin-top: 10px; /* Espacement depuis le h2 */
-    font-size: 14px; /* Taille de police */
-    color: #666; /* Couleur du texte */
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 .billing-options {
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.billing-options button {
-    background: #f0f0f0;
-    color: #444;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
+.billing-options p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
     cursor: pointer;
-    border-radius: 5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5eded;
+    transition: 0.4s;
+    border-radius: 25px;
 }
 
-.billing-options button:hover {
-    background: #e98c35;
-    color: white;
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #e98c35;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #e98c35;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 .save-kit-button {
-    background: #e98c35;
-    color: white;
+    background: rgb(233, 229, 229);
+    color: #666;
     border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 3px 8px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
+    font-size: 10px;
 }
 
 .plans {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
 }
 
 .plan {
-    background: #fff;
-    padding: 10px; /* Padding réduit */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 253, 252, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     flex: 1;
     text-align: left;
-    max-width: 280px; /* Largeur réduite */
+    max-width: 280px;
+    position: relative; 
+    margin-top: 60px;
 }
 
 .plan h3 {
     margin-bottom: 10px;
-    font-size: 18px; /* Taille de police réduite */
+    font-size: 18px;
+    color: #333;
 }
 
 .plan h5 {
-    font-size: 20px; /* Taille de police réduite */
-    margin: 10px 0; /* Marge réduite */
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+.plan p{
+    font-size: 12px;
+    margin: 10px 0;
+    color: #b8b3b3;
 }
 
 .plan ul {
-    list-style-type: none; /* Supprime les puces par défaut */
+    list-style-type: none;
     padding: 0;
 }
 
 .plan ul li {
     display: flex;
-    align-items: center; /* Alignement vertical des éléments */
-    margin-bottom: 8px; /* Espacement entre les éléments */
+    align-items: center;
+    margin-bottom: 8px;
     font-size: 12px;
+    color: #555;
 }
 
-/* .plan ul li input[type="checkbox"] {
-    margin-right: 10px; 
-} */
-/* Style personnalisé pour les checkboxes */
 .plan ul li input[type="checkbox"] {
-    appearance: none; /* Désactive le style par défaut */
-    width: 16px; /* Largeur de la checkbox */
-    height: 16px; /* Hauteur de la checkbox */
-    border: 2px solid #e98c35; /* Bordure orange */
-    border-radius: 8px; /* Coins arrondis */
-    margin-right: 10px; /* Espacement entre la checkbox et le texte */
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e98c35;
+    border-radius: 8px;
+    margin-right: 10px;
     cursor: pointer;
     position: relative;
 }
 
-/* Style de la checkbox cochée */
 .plan ul li input[type="checkbox"]:checked {
-    background-color: #e98c35; /* Fond orange */
-    border-color: #e98c35; /* Bordure orange */
+    background-color: #e98c35;
+    border-color: #e98c35;
 }
 
-/* Style du "check" à l'intérieur de la checkbox */
 .plan ul li input[type="checkbox"]:checked::before {
-    content: "✔"; /* Symbole de check */
-    font-size: 10px; /* Taille du symbole */
-    color: white; /* Couleur du symbole */
+    content: "✔";
+    font-size: 10px;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.plan button {
+.select-plan-button{
     background: black;
     color: white;
-    padding: 5px 12px; /* Padding réduit */
+    padding: 7px 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 5px;
-    width: 100%;
+    width: 100%; 
 }
-
-.plan button:hover {
+.select-plan-button:hover{
     background: #e98c35;
 }
 
 .contact-us-button {
-    background: #e98c35;
-    color: white;
-    padding: 5px 12px; /* Padding réduit */
-    border: none;
-    border-radius: 5px;
+    background: white;
+    color: rgb(70, 66, 66);
+    padding: 7px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 5px;
     width: 100%;
 }
+.contact-us-button:hover{
+    background: #e98c35;
+}
 
+.save-button {
+        background: rgb(231, 231, 231);
+        color: #666;
+        border: none;
+        padding: 3px 8px;
+        cursor: pointer;
+        border-radius: 30px;
+        font-size: 10px;
+        position: absolute; 
+        top: 30px; 
+    right: 10px;
+ }
+
+
+
+
+
+
+@media (max-width: 768px) {
+ 
+    .navbar-elements {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+
+
+    .navbar-center, .navbar-right {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-center select, .navbar-center a,
+    .navbar-right a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navbar-center select {
+        margin: 0;
+    }
+
+
+    .navbar {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        margin-right: 0;
+    }
+}

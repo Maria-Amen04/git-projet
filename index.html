@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pricing Page</title>
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <div class="logo"><strong>Lostbag</strong></div>
+    
+        <!-- Checkbox pour le menu burger -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+    
+        <!-- Conteneur pour le menu (navbar-center et navbar-right regroupés) -->
+        <div class="navbar-menu">
+            <!--div class="navbar-center"-->
+                <select onchange="location = this.value;">
+                    <option selected disabled>Product</option>
+                    <option value="#">Product 1</option>
+                    <option value="#">Product 2</option>
+                </select>
+                <select onchange="location = this.value;">
+                    <option selected disabled>Ressource</option>
+                    <option value="#">Ressource 1</option>
+                    <option value="#">Ressource 2</option>
+                </select>
+                <select onchange="location = this.value;">
+                    <option selected disabled>Company</option>
+                    <option value="#">Company 1</option>
+                    <option value="#">Company 2</option>
+                </select>
+                <a href="#">Pricing</a>
+                <a href="#" class="no-border">Enterprise</a>
+            </div>
+            <div class="navbar-right">
+                <a href="#" class="login">Login</a>
+                <a href="#"  class="signup">Sign up</a>
+            </div>
+        </div>
+    </nav>
+
+   </header>
+   
+   <!-- <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </label>  -->
+
+
+    <div class="pricing-container">
+        <div class="pricing-radio">
+            <input type="radio" id="pricing-radio" name="pricing" checked>
+            <label for="pricing-radio">Pricing</label>
+        </div>
+        <h2>Flexible pricing plans<br> for every need</h2>
+        <p>Find the perfect plan-whether you’re starting out or<br> scaling up with advanced tools and premium support.</p>
+        <div class="billing-options">
+            <p>Billed monthly</p>
+            <label class="switch">
+                <input type="checkbox" id="billing-toggle" disabled>
+                <span class="slider round"></span>
+            </label>
+            <p>Billed annually</p>
+            <button class="save-kit-button">Save 10%</button>
+        </div>
+
+        <div class="plans">
+            <div class="plan">
+                <h3>Free</h3>
+                <button class="save-button">Started plan</button>
+                <p>Start with the basics and experience LoafBlog at no cost.</p>
+                <h5>$0 / month</h5>
+                <p>Pause and cancel anytime</p>
+                <button class="select-plan-button">Select Plan</button>
+                <p>Free plan includes:</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Essential event management tools</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2">Basic analytics & reporting</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Up to 3 events per month</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Community support</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="plan">
+                <h3>Seeding</h3>
+                <button class="save-button">Popular plan</button>
+                <p>Unlock advanced tools and premium support for seamless event management.</p>
+                <h5>$299 / month</h5>
+                <p>Pause and cancel anytime</p>
+                <button class="select-plan-button">Select Plan</button>
+                <p>Seeding plan includes:</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Unlimited events</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2"> AI-powered insights & recommendations</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Advanced budget tracking</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Priority support</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4">Team collaboration tools</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="plan">
+                <h3>Enterprise</h3>
+                <button class="save-button">Campany plan</button>
+                <p>For teams that need custom solutions and dedicated support. Contact us for more info.</p>
+                <h5>$500 / month</h5>
+                <p>Pause and cancel anytime</p>
+                <button class="contact-us-button">Contact Us →</button>
+                <p>Enterprise plan includes:</p>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="checkbox1" checked disabled>
+                        <label for="checkbox1">Custom integrations</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox2" checked disabled>
+                        <label for="checkbox2"> Dedicated account manager</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox3" checked disabled>
+                        <label for="checkbox3">Advanced security & compliance</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4"> API access for automation</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="checkbox4" checked disabled>
+                        <label for="checkbox4"> VIP onboarding & training</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+</body>
+</html>

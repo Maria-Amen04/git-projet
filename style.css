@@ -1,0 +1,592 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    height: 100vh; 
+    line-height: 1.6;
+    background: linear-gradient(to bottom, white, #ebc5a9); 
+} 
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1.8px solid #ece4e4;
+}
+nav {
+    /* width: 70%;
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    z-index: 1000;
+    margin-top: 15px; */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    position: absolute; 
+    /* left: 50%;  */
+    transform: translateX(-50%); 
+    margin: auto;
+} 
+
+.navbar-right {
+    display: flex;
+    margin-left: auto;
+    gap: 10px; 
+}
+.navbar .a{
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.login-.signup{
+    color: #333;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+nav select{
+    padding: 8px 5px;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    font-size: 15px;
+    color: #e16500;
+    font-weight: bold;
+}
+.navbar .logo {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.navbar select, .navbar a {
+    background-color: transparent;
+    color: #444;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.navbar select:hover, .navbar a:hover {
+    background-color: #e98c35;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar a[href="#"]:last-child {
+    border: 1px solid #e98c35;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.navbar a.no-border {
+    border: none !important;
+    padding: 5px 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
+
+.pricing-container {
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* max-width: 1200px; */
+    text-align: center;
+    margin: 0 auto; /* Centrer horizontalement */
+    padding-top: 100px; /* Espacement pour la navbar */
+    background: linear-gradient(to bottom, white, #ebc5a9); /* Dégradé appliqué */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-radio {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 3px;
+    padding: 2px 3px;
+    border: 0.5px solid #e98c35;
+    border-radius: 20px;
+    background-color: white; /* Fond blanc pour contraster avec le dégradé */
+}
+
+.pricing-radio input[type="radio"] {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 4px solid #e98c35;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.pricing-radio input[type="radio"]:checked {
+    background-color: #e98c35; /* Fond orange */
+}
+
+.pricing-radio input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.pricing-radio label {
+    font-size: 8px;
+    color: #666;
+    cursor: pointer;
+}
+
+.pricing-container h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pricing-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.billing-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.billing-options p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5eded;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #e98c35;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #e98c35;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.save-kit-button {
+    background: rgb(233, 229, 229);
+    color: #666;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 10px;
+}
+
+.plans {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.plan {
+    background: rgba(255, 253, 252, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    flex: 1;
+    text-align: left;
+    max-width: 280px;
+    position: relative; 
+    margin-top: 60px;
+}
+
+.plan h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.plan h5 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+.plan p{
+    font-size: 12px;
+    margin: 10px 0;
+    color: #b8b3b3;
+}
+
+.plan ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plan ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+.plan ul li input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e98c35;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.plan ul li input[type="checkbox"]:checked {
+    background-color: #e98c35;
+    border-color: #e98c35;
+}
+
+.plan ul li input[type="checkbox"]:checked::before {
+    content: "✔";
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.select-plan-button{
+    background: black;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%; 
+}
+.select-plan-button:hover{
+    background: #e98c35;
+}
+
+.contact-us-button {
+    background: white;
+    color: rgb(70, 66, 66);
+    padding: 7px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+}
+.contact-us-button:hover{
+    background: #e98c35;
+}
+
+.save-button {
+        background: rgb(231, 231, 231);
+        color: #666;
+        border: none;
+        padding: 3px 8px;
+        cursor: pointer;
+        border-radius: 30px;
+        font-size: 10px;
+        position: absolute; 
+        top: 30px; 
+    right: 10px;
+ }
+
+.menu-checkbox{
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+
+
+
+ @media (max-width: 1200px) {
+    .plans {
+        gap: 20px;
+    }
+
+    .plan {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+   
+    .pricing-container {
+        padding: 20px;
+    }
+
+    .plans {
+        gap: 20px;
+        flex-direction: column; 
+        margin-top: 50px;
+    }
+
+    .plan {
+        margin-top: 20px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .body{
+        height: auto;
+    }
+
+
+    header {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .navbar {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -40%;
+        width: 40%;
+        height: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navbar-center, .navbar-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-checkbox:checked ~ .navbar-menu {
+        right: 0;
+    }
+
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        display: block;
+    }
+
+    .navbar-center select, .navbar-center a, .navbar-right a {
+        margin: 5px 0;
+    }
+
+    .navbar-right a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-right .signup {
+        color: #e16500;
+    }
+
+    .navbar-right .signup:hover {
+        background-color: #e16500;
+        color: #fff;
+    }
+
+    .pricing-container {
+        padding: 15px;
+    }
+
+    .plan {
+        max-width: 100%;
+        padding: 15px; 
+    }
+
+    .plan h3 {
+        font-size: 16px;
+    }
+
+    .plan h5 {
+        font-size: 18px;
+    }
+
+    .plan ul li {
+        font-size: 10px; 
+    }
+
+    .save-button {
+        font-size: 8px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        font-size: 12px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .plan {
+        padding: 10px; 
+        max-width: 100%; 
+    }
+
+    .plan h3 {
+        font-size: 14px; 
+    }
+
+    .plan h5 {
+        font-size: 16px;
+    }
+
+    .plan p {
+        font-size: 10px; 
+    }
+
+    .plan ul li {
+        font-size: 9px;
+    }
+
+    .save-button {
+        font-size: 7px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        font-size: 12px;
+    }
+}
+
+
+

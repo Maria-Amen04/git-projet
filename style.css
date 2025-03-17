@@ -1,32 +1,46 @@
-html, body {
-    height: 100%; /* Prendre toute la hauteur de la page */
-    margin: 0; /* Supprimer les marges par défaut */
-    padding: 0; /* Supprimer les paddings par défaut */
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, white, #ebc5a9); /* Dégradé appliqué au body */
-} 
 
-body {
-    display: block; /* Retirer flex pour éviter les comportements inattendus*/ 
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    height: 100vh; 
+    line-height: 1.6;
+    background: linear-gradient(to bottom, white, #ebc5a9); 
 } 
-
-.navbar {
-    width: 70%;
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1.8px solid #ece4e4;
+}
+nav {
+    /* width: 70%;
     background: white;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* Espace entre les groupes */
+    justify-content: space-between;
     align-items: center;
     border: 1px solid #ddd;
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
     z-index: 1000;
-    margin-top: 15px;
+    margin-top: 15px; */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
 }
 
 .navbar-center {
@@ -34,16 +48,55 @@ body {
     align-items: center;
     gap: 10px; 
     position: absolute; 
-    left: 50%; 
+    /* left: 50%;  */
     transform: translateX(-50%); 
-}
+    margin: auto;
+} 
 
 .navbar-right {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Espacement entre les éléments */
+    margin-left: auto;
+    gap: 10px; 
+}
+.navbar .a{
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.login-.signup{
+    color: #333;
 }
 
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+nav select{
+    padding: 8px 5px;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    font-size: 15px;
+    color: #e16500;
+    font-weight: bold;
+}
 .navbar .logo {
     font-size: 16px;
     font-weight: bold;
@@ -341,54 +394,199 @@ input:checked + .slider:before {
     right: 10px;
  }
 
+.menu-checkbox{
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+}
 
 
 
 
+
+ @media (max-width: 1200px) {
+    .plans {
+        gap: 20px;
+    }
+
+    .plan {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+   
+    .pricing-container {
+        padding: 20px;
+    }
+
+    .plans {
+        gap: 20px;
+        flex-direction: column; 
+        margin-top: 50px;
+    }
+
+    .plan {
+        margin-top: 20px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
- 
-    .navbar-elements {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        padding: 10px;
+    .body{
+        height: auto;
     }
 
 
+    header {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .navbar {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -40%;
+        width: 40%;
+        height: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
 
     .navbar-center, .navbar-right {
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
     }
 
-    .navbar-center select, .navbar-center a,
-    .navbar-right a {
+    .menu-checkbox:checked ~ .navbar-menu {
+        right: 0;
+    }
+
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        display: block;
+    }
+
+    .navbar-center select, .navbar-center a, .navbar-right a {
+        margin: 5px 0;
+    }
+
+    .navbar-right a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease, color 0.3s ease;
         text-align: center;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
+        width: 100%;
     }
 
-    .navbar-center select {
-        margin: 0;
+    .navbar-right .signup {
+        color: #e16500;
     }
 
-
-    .navbar {
-        width: 90%;
-        padding: 10px;
+    .navbar-right .signup:hover {
+        background-color: #e16500;
+        color: #fff;
     }
 
-    .navbar .logo {
-        margin-right: 0;
+    .pricing-container {
+        padding: 15px;
+    }
+
+    .plan {
+        max-width: 100%;
+        padding: 15px; 
+    }
+
+    .plan h3 {
+        font-size: 16px;
+    }
+
+    .plan h5 {
+        font-size: 18px;
+    }
+
+    .plan ul li {
+        font-size: 10px; 
+    }
+
+    .save-button {
+        font-size: 8px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        font-size: 12px; 
     }
 }
+
+@media (max-width: 480px) {
+    .plan {
+        padding: 10px; 
+        max-width: 100%; 
+    }
+
+    .plan h3 {
+        font-size: 14px; 
+    }
+
+    .plan h5 {
+        font-size: 16px;
+    }
+
+    .plan p {
+        font-size: 10px; 
+    }
+
+    .plan ul li {
+        font-size: 9px;
+    }
+
+    .save-button {
+        font-size: 7px; 
+    }
+
+    .select-plan-button,
+    .contact-us-button {
+        font-size: 12px;
+    }
+}
+
+
+
